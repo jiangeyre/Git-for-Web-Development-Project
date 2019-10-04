@@ -1,0 +1,44 @@
+Stretch Answers:
+
+Merge conflict:
+    -this occurs when you attempt to merge branches that have competing commits, which will prompt Git to have you decide which changes to incorporate in the final merge
+    -have to resolve all merge conflicts  before you can merge a pull request
+
+How to resolve a merge conflict:
+    -manually edit the conflicted file to select the changes
+        -If your merge conflict is caused by competing line changes, such as when people make different changes to the same line of the same file on different branches in your Git repo, you can use the conflict editor on Github
+        -For others, you need to resolve in a local clone and then push the change on to your branch.
+
+Git pull: a command used to update the local version of a repo from a remote
+    -updates the current local working branch (currently checked out branch)
+    -updates the remote tracking branches for all other branches
+
+Git rebase: the process of moving or combining a sequence of commits to a new base commit
+
+Git merge: taking the independent lines of development created by git branch and integrate them into a single branch
+
+Merging vs Rebasing:
+    -git rebase and git merge solve the same problem: designed to integrate changes from one branch into another branch - they just do it in diferent ways
+    -example: (this creates a new "merge commit" in the feature branch that ties together the histories of both branches)
+        -git checkout feature
+        -git merge master
+        -or // git merge feature master
+    -merging is non-destructive; will extraneous merge commit every time you need to incorporate upstream changes
+    -example: (moves entire feature branch to begin on the tip of the master branch, incorporating all of the new commits in the master)
+        -git checkout feature
+        -get rebase master
+    -rebasing will rewrite the project history by creating brand new commits for each commit in the original branch (however much more clean)
+
+Git reset: a powerful command that is used to undo local changes to the state of a Git repo
+
+Git revert: undoing changes to a repo's commit history
+
+Git clean: operates on untracked files (files that have been created within your repo's working directory but have not yet been added to the repo's tracking index using the git add . command)
+
+Graphical User Interface (GUI) Git console:
+    -a visual way of interacting with a computer using items such as windows, icons, and menus, used by most modern operating systems
+    -git gui allows to users to make changes to their repo by making new commits, amending existing ones, creating branches, performing local merges, and fetching/pushing to remote repos
+
+SSH keys with GitHub
+    -When working with a GitHub repo, you will often need to identify yourself to GitHub using your username and pw. An SSH key is an alternate way to identify yourself that doesn't require you to the enter your username and password every time.
+    -private key stored on your computer
